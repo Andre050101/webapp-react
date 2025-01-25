@@ -11,7 +11,7 @@ function App() {
     <div className="container mt-4">
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/movie/:id' element={<MovieDetail />} />
+        <Route path='/movies/:id' element={<MovieDetail />} />
       </Routes>
     </div>
   </Router>
