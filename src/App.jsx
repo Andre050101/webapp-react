@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import MovieDetail from './pages/MovieDetail'
 import Layout from './components/Layout';
 
+
 function App() {
  return (
   <Router>

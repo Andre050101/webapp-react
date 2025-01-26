@@ -13,15 +13,22 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
-        <h1>Lista dei Film</h1>
-        <ul>
+        <div className="container mt-4">
+        <h1 className="text-center mb-4">Lista dei Film</h1>
+        <div className="row">
             {movies.map((movie) => (
-                <li key={movie.id}>
-                   <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-                </li>
+                <div className="col-md-4 mb-4" key={movie.id}>
+                    <div className="card">
+                        <img src={movie.image} alt={movie.title} className="card-img-top" />
+                        <div className="card-body">
+                            <h5 className="card-title">{movie.title}</h5>
+                            <p className="card-text">{movie.abstract}</p>
+                            <Link to={`/movies/${movie.id}`} className="btn btn-primary">Dettagli</Link>
+                        </div>
+                    </div>
+                </div>
             ))}
-        </ul>
+        </div>
     </div>
     );
 };
