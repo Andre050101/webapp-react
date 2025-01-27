@@ -19,7 +19,7 @@ const Home = () => {
         <div className="row">
             {movies.map((movie) => (
                 <div className="col-md-4 mb-4" key={movie.id}>
-                    <div className="card">
+                    <div className="card h-100">
                         <img src={movie.image} alt={movie.title} className={styles.movieimg} />
                         <div className="card-body">
                             <h5 className="card-title">{movie.title}</h5>
