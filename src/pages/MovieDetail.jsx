@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import styles from './MovieDetail.module.css'
+import { getStarRating } from '../Utilities/operations';
 
 const MovieDetail = () => {
     const { id } = useParams();
@@ -44,9 +45,9 @@ const MovieDetail = () => {
                     movie.reviews.map((review) => (
                         <div key={review.id} className="card mt-3">
                             <div className="card-body bg-warning">
-                                <h5 className="card-title">{review.name}</h5>
+                                <h5 className="card-title"><strong>Name:</strong> {review.name}</h5>
                                 <p className="card-text">{review.text || "Nessuna recensione disponibile."}</p>
-                                <span><strong>Voto: </strong>{review.vote}</span>
+                                <span><strong>Vote: </strong>{getStarRating(review.vote)}</span>
                             </div>
                         </div>
                     ))
