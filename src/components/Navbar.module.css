@@ -1,0 +1,9 @@
+/* Aggiungi questo CSS per la navbar fissa */
+.navbar {
+    z-index: 1000; /* Assicurati che la navbar stia sopra gli altri contenuti */
+}
+  
+body {
+    padding-top: 80px; /* Questo dovrebbe essere abbastanza per evitare che il contenuto venga nascosto dalla navbar */
+}
+

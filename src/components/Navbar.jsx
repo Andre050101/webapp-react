@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import 'font-awesome/css/font-awesome.min.css';
+import './Navbar.module.css'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-warning">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-warning fixed-top">
             <div className="container-fluid">
-                <NavLink className="navbar-brand" to="/">
+                <NavLink className="navbar-brand" to="/" style={{ fontSize: '2rem', fontWeight: 'bold' }}>
                     <strong>
                         <span>We</span>
                         <i className="fa fa-heart" style={{ color: 'red', margin: '0 5px' }}></i>
@@ -30,31 +31,34 @@ const Navbar = () => {
                 <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                        <NavLink
+                            <NavLink
                                 className={({ isActive }) =>
                                     `nav-link ${isActive ? 'active' : ''}`
                                 }
                                 to="/"
+                                style={{ fontSize: '1.25rem', fontWeight: 'bold' }}
                             >
                                 Home
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                        <NavLink
+                            <NavLink
                                 className={({ isActive }) =>
                                     `nav-link ${isActive ? 'active' : ''}`
                                 }
                                 to="/about"
+                                style={{ fontSize: '1.25rem', fontWeight: 'bold' }}
                             >
                                 About
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                        <NavLink
+                            <NavLink
                                 className={({ isActive }) =>
                                     `nav-link ${isActive ? 'active' : ''}`
                                 }
                                 to="/contact"
+                                style={{ fontSize: '1.25rem', fontWeight: 'bold' }}
                             >
                                 Contact
                             </NavLink>
