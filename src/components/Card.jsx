@@ -9,7 +9,7 @@ const Card = ({ movie }) => {
                         <div className={styles["card-overlay"]}>
                             <h5 className={styles["card-title"]}>{movie.title}</h5>
                             <p className={styles["card-text"]}>{movie.abstract}</p>
-                            <Link to={`/movies/${movie.id}`} className={styles["details-link"]}>Dettagli</Link>
+                            <Link to={`/movies/${movie.id}`} className={styles["details-link"]}><span className={styles["btn-text"]}>Dettagli</span></Link>
                         </div>
                     </div>
     );

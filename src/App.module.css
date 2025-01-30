@@ -1,10 +1,30 @@
+::-webkit-scrollbar {
+    display: none;
+  }
+
+html {
+    scrollbar-width: none;
+  }
+
 body {
+    font-family: "Teko", serif;
     background-color: #be7c00; 
     margin: 0;
     padding: 0;
+    -ms-overflow-style: none;
+    
 }
 
 #root {
     background-color: #be7c00;
     min-height: 100vh;
 }
+
+
+.teko-font {
+    font-family: "Teko", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
