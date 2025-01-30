@@ -6,10 +6,12 @@ import Layout from './components/Layout';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import './App.module.css';
+import { MovieProvider } from './context/MovieContext';
 
 
 function App() {
  return (
+  <MovieProvider>
   <Router>
       <Routes>
           <Route path="/" element={<Layout />}>
@@ -20,6 +22,7 @@ function App() {
           </Route>
       </Routes>
   </Router>
+  </MovieProvider>
  );
 }
 

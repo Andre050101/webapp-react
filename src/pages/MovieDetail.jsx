@@ -3,17 +3,20 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import styles from './MovieDetail.module.css'
 import { getStarRating } from '../Utilities/operations';
+import { useMovieContext } from '../context/MovieContext';
 
 const MovieDetail = () => {
     const { id } = useParams();
+    const { fetchMovieById } = useMovieContext();
     const [movie, setMovie] = useState(null);
 
     useEffect(() => {
-        axios
-            .get(`http://localhost:3000/movies/${id}`)
-            .then((response) => setMovie(response.data))
-            .catch((error) => console.log("Errore nel recupero del film:", error));
-    }, [id]);
+        const loadMovie = async () => {
+            const data = await fetchMovieById(id);
+            setMovie(data);
+        };
+        loadMovie();
+    }, [id, fetchMovieById]);
 
     if (!movie) return <p>Caricamento...</p>;
 

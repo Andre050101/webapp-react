@@ -3,16 +3,11 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css'
-
-const fetchMovies = async () => {
-    const { data } = await axios.get("http://localhost:3000/movies/");
-    return data;
-};
+import { useMovieContext } from '../context/MovieContext';
 
 const Home = () => {
-    const {data: movies, isLoading, error}= useQuery('movies', fetchMovies);
-
-    if (isLoading) {
+    const { movies, loading, error } = useMovieContext();
+    if (loading) {
         return <p>Caricamento...</p>;
     };
 
