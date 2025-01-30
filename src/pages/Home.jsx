@@ -1,17 +1,24 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css'
 
-const Home = () => {
-    const [movies, setMovies] = useState([]);
+const fetchMovies = async () => {
+    const { data } = await axios.get("http://localhost:3000/movies/");
+    return data;
+};
 
-    useEffect(() => {
-        axios
-            .get("http://localhost:3000/movies/")
-            .then((response) => setMovies(response.data))
-            .catch((error) => console.log("Errore nel recupero del film:", error));
-    }, []);
+const Home = () => {
+    const {data: movies, isLoading, error}= useQuery('movies', fetchMovies);
+
+    if (isLoading) {
+        return <p>Caricamento...</p>;
+    };
+
+    if (error) {
+        return <p>Errore nel recupero dei film</p>;
+    };
 
     return (
         <>
