@@ -1,0 +1,32 @@
+.sidebar {
+    background-color: #ffc107;
+    height: calc(100vh - 80px); /* Sottrai l'altezza della navbar */
+    position: fixed;
+    top: 80px; /* Uguale all'altezza della navbar */
+    padding: 20px;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Previene lo scroll indesiderato */
+    width: 350px;
+}
+
+.link {
+    display: block;
+    padding: 12px;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    background-color: #e0a800;
+    transform: translateX(5px);
+}
+
+.active {
+    background-color: #ffc107;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
